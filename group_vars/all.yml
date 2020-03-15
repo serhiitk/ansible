@@ -1,0 +1,50 @@
+---
+ntp_manage_config: true
+
+ntp_servers:
+  - "time.windows.com"
+  - 10.0.0.1
+
+users:
+  - username: labsudo
+    groups: ['sudo']
+    generate_ssh_key: yes
+  - username: lab
+    generate_ssh_key: yes
+
+logrotate_scripts:
+  - name: system_log
+    path: "/var/log/syslog"
+    options:
+      - daily
+      - weekly
+      - size 25M
+
+  - name: apache_logs (Debian)
+    paths:
+      - "/var/log/apache2/access.log"
+      - "/var/log/apache2/error.log"
+    options:
+      - daily
+      - weekly
+      - size 25M
+
+  # - name: apache_logs (RHEL)
+  #   paths:
+  #     - "/var/log/httpd/access_log"
+  #     - "/var/log/httpd/error_log"
+  #   options:
+  #     - daily
+  #     - weekly
+  #     - size 25M
+  #
+  #
+  # - name: apache_logs (FreeBSD)
+  #   paths:
+  #     - "/var/log/httpd-access.log"
+  #     - "/var/log/httpd-error.log"
+  #   options:
+  #     - daily
+  #     - weekly
+  #     - size 25M
+...

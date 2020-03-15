@@ -1,0 +1,26 @@
+---
+- name: 1. Configure ntp-client for ALL HOSTS
+  hosts: all
+  become: yes
+
+  roles:
+    - geerlingguy.git
+    - geerlingguy.ntp
+    - singleplatform-eng.users
+    - geerlingguy.apache
+    - nickhammond.logrotate
+
+- name: 2. Configure "frontend" HOSTS
+  hosts: frontend
+  become: yes
+
+  roles:
+    - geerlingguy.nginx
+
+- name: 3. Configure "backend" HOSTS
+  hosts: backend
+  become: yes
+
+  roles:
+    - geerlingguy.apache-php-fpm
+...

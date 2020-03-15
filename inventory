@@ -1,0 +1,12 @@
+#############
+[ntp_client]
+192.168.56.251 ansible_user=vagrant ansible_private_key_file=./hosts/vm1/.vagrant/machines/default/virtualbox/private_key
+
+[frontend]
+192.168.56.252 ansible_user=vagrant ansible_private_key_file=./hosts/vm2/.vagrant/machines/default/virtualbox/private_key
+
+[backend]
+192.168.56.253 ansible_user=vagrant ansible_private_key_file=./hosts/vm3/.vagrant/machines/default/virtualbox/private_key
+
+[db_hosts]
+192.168.56.254 ansible_user=vagrant ansible_private_key_file=./hosts/vm4/.vagrant/machines/default/virtualbox/private_key

@@ -1,0 +1,24 @@
+---
+# Install roles from galaxy:
+
+# Role to installation Git version control software.
+- src: geerlingguy.git
+
+# Role to NTP installation and configuration for Linux.
+- src: geerlingguy.ntp
+
+# Role to manage users on a system.
+- src: singleplatform-eng.users
+
+# Role to install Apache 2.x
+- src: geerlingguy.apache
+
+# Role to configure logrotate scripts.
+- src: nickhammond.logrotate
+
+# Role to install Nginx
+- src: geerlingguy.nginx
+
+# Role to install PHP-FPM
+- src: geerlingguy.apache-php-fpm
+...
